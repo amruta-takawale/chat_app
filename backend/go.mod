@@ -1,4 +1,5 @@
-module github.com/TutorialEdge/realtime-chat-go-react
+// module github.com/TutorialEdge/realtime-chat-go-react
+module backend
 
 go 1.14
 
