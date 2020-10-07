@@ -3,7 +3,7 @@ package websocket
 import (
     "fmt"
     "log"
-
+	"sync"
     "github.com/gorilla/websocket"
 )
 
@@ -11,11 +11,12 @@ type Client struct {
 	ID string
 	Conn *websocket.Conn
 	Pool *Pool
+	mu   sync.Mutex
 }
 
 type Message struct {
-	Type int `json:"Int"`
-	Body string `json:"Type"`
+	Type int `json:"type"`
+	Body string `json:"body"`
 }
 
 func (c *Client) Read() {
